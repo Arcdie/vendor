@@ -10,3 +10,4 @@
 .nyc_output/
 npm-debug.log
 all.log
+package-lock.json

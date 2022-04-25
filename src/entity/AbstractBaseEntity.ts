@@ -11,7 +11,7 @@ export class AbstractBaseEntity {
   @IsNumber()
   @IsOptional()
   id: number;
-}
+};
 
 export function inheritParentDecorators() {
   return (
