@@ -1,5 +1,5 @@
-import {Column, Entity} from 'typeorm';
-import {IsNotEmpty} from 'class-validator';
+import {Entity, OneToOne} from 'typeorm';
+import {Contains} from 'class-validator';
 
 import {User} from './User';
 // import {UserContraint} from '../validator/constraint/UserConstraint';
@@ -9,10 +9,9 @@ import {inheritParentDecorators} from './AbstractBaseEntity';
 @Entity()
 export class Client extends User {
   @inheritParentDecorators()
-  // @Validate(UserContraint, [])
-  fieldA: string;
+  @Contains('client-')
+  name: string;
 
-  @Column('text')
-  @IsNotEmpty()
-  fieldC: string;
+  @OneToOne(() => User, user => user.clientId)
+  userId: string;
 }

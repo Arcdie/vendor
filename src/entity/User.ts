@@ -1,15 +1,15 @@
-import {TypeormModule} from '../libs/typeorm';
-import {IsNotEmpty, Contains} from 'class-validator';
+import {Contains} from 'class-validator';
+import {Entity, Column, OneToOne} from 'typeorm';
 
+import {Client} from './Client';
 import {AbstractBaseEntity} from './AbstractBaseEntity';
 
-@TypeormModule.Entity()
+Entity()
 export class User extends AbstractBaseEntity {
-  @TypeormModule.Column('text')
-  @Contains('hello')
-  fieldA: string;
+  @Column('text')
+  @Contains('user-')
+  name: string;
 
-  @TypeormModule.Column('text')
-  @IsNotEmpty()
-  fieldB: string;
+  @OneToOne(() => Client, client => client.userId)
+  clientId: Client;
 }
