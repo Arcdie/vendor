@@ -1,15 +1,15 @@
-import {Column, Entity} from 'typeorm';
+import {TypeormModule} from '../libs/typeorm';
 import {IsNotEmpty, Contains} from 'class-validator';
 
 import {AbstractBaseEntity} from './AbstractBaseEntity';
 
-@Entity()
+@TypeormModule.Entity()
 export class User extends AbstractBaseEntity {
-  @Column('text')
+  @TypeormModule.Column('text')
   @Contains('hello')
   fieldA: string;
 
-  @Column('text')
+  @TypeormModule.Column('text')
   @IsNotEmpty()
   fieldB: string;
 }
