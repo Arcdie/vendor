@@ -6,6 +6,12 @@ import {User} from './User';
 
 import {inheritParentDecorators} from './AbstractBaseEntity';
 
+const globalWithPrisma = global as typeof globalThis & {
+  a: 'a',
+};
+
+globalWithPrisma.a = 'a';
+
 @Entity()
 export class Client extends User {
   @inheritParentDecorators()
