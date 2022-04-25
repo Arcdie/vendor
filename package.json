@@ -1,5 +1,6 @@
 {
   "name": "my-vendors",
+  "type": "module",
   "version": "1.0.0",
   "description": "my vendors",
   "scripts": {
