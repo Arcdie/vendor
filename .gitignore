@@ -1,0 +1,12 @@
+/node_modules
+/coverage/
+/**/*.DS_Store
+/dist
+/build
+/data
+/report
+.vscode/
+.idea/
+.nyc_output/
+npm-debug.log
+all.log
