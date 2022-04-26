@@ -4,7 +4,7 @@ import {Entity, Column, OneToOne} from 'typeorm';
 import {Client} from './Client';
 import {AbstractBaseEntity} from './AbstractBaseEntity';
 
-Entity()
+@Entity()
 export class User extends AbstractBaseEntity {
   @Column('text')
   @Contains('user-')
